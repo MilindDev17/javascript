@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Symmetric Difference</title>
+</head>
+<script>
+	
+function sym(){
+	var args = [];
+	for (var i = 0 ; i < arguments.length; i++) {
+	 	args.push(arguments[i]);
+	 } 
+
+	 function symDiff(arr1,arr2){
+	 	var result = [];
+	 	arr1.forEach(function(item){
+	 		if(arr2.indexof(item)<0 && result.indexof(item)<0){
+	 			result.push(item);
+	 		}
+	 	});
+
+	 	arr2.forEach(function(item){
+	 		if(arr1.indexof(item) < 0 && result.indexof(item)< 0){
+	 			result.push(item);
+	 		}
+	 	});
+	 	
+	 	return result;
+	}
+	return args.reduce(symDiff);
+	}
+	console.log(sym([1, 2, 5],[ 2, 3, 5 ],[ 3, 4, 5 ]));
+	
+</script>
+<body>
+	<P>Symmetrice Difference</P>	
+	<h1>[1 2 5][ 2 3 5 ][ 3  4 5 ] equals [ 1 4 5 ]</h1>
+</body>
+</html>
