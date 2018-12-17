@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<SCRIPT>
+function revString(str) {
+   retStr = "";
+   strArray = new Array(str.split(""));
+   for (i=str.length - 1 ; i > - 1 ; i--){
+      retStr += str.substr(i,1);
+   }
+   return retStr;
+}
+
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM name="theForm">
+Enter a text string:
+<TEXTAREA name=inStr rows=5 cols=90>
+</TEXTAREA>
+<INPUT type=button value="Reverse String" onClick="document.theForm.results.value = revString(document.theForm.inStr.value)";>
+<INPUT type=button name="theButton" value="Clear Results" onClick='document.theForm.results.value=""';>
+Results<br>
+<TEXTAREA name=results rows=5 cols=90>
+</TEXTAREA>
+
+</FORM>  
+</BODY>
+</HTML>

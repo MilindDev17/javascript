@@ -1,0 +1,39 @@
+<HTML>
+</HEAD>
+<BODY>
+<SCRIPT language="JavaScript">
+<!--
+function set_it() {
+   var the_text="name=yourName&";
+   var toexpire= new Date("March 15, 2008");
+   var expdate="expires="+toexpire.toGMTString();
+   the_text+=expdate;
+
+   var newtext=escape(the_text);
+   document.cookie=newtext;
+}
+
+function read_it() {
+
+ if (document.cookie) {
+
+    var mycookie=document.cookie;
+    var fixed_cookie= unescape(mycookie);
+    var thepairs= fixed_cookie.split("&");
+    var pair1= thepairs[0];
+    var pair2= thepairs[1];
+
+    var namevalue1= pair1.split("=");
+    alert("read");
+    alert("Welcome, "+namevalue1+"!");
+ } else  {
+   alert("set");
+   set_it();
+ }
+}
+
+read_it();
+//-->
+</SCRIPT>
+</BODY>
+</HTML>
