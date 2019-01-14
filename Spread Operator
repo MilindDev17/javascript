@@ -74,3 +74,87 @@ For Math.max:
 let arr = [3, 5, 1];
 
 alert( Math.max(...arr) ); // 5 (spread turns array into a list of arguments)
+==============
+
+
+//spread operator
+// const x = [1,2,3];
+// const z = [x,5,6,7]
+// console.log(z)
+
+//spread operator
+// const x = [1,2,3];
+// const y = [5,6,7];
+// console.log(x,y)
+
+//spread array
+// const x = ["job","hat","jack"]
+// const y = ["cat" , x];
+// console.log(y)
+
+//===============
+//rest parameter
+ // rest parameters collect all the remaining elements into an array. This allows us to do really neat function definitions.
+
+// function sumall(a,b,c) {
+// 	return a+b+c;
+// }
+// alert(sumall(1,2,3,4));
+// console.log(sumall(1,2,3,4))
+// alert(sumall(5,6,7));
+//====================
+//es6 function 
+
+
+// Since the argument object isn’t an array, we first have to convert it into an array using the Array.from method before we can use the reduce method 
+// function mult() { //mult(4,6) 
+// 	let args = Array.from(arguments) ;
+// 		console.log(args.reduce(function(acc,currvalue){
+// 			return acc * currvalue;
+// 		}));
+// 	}
+
+// mult(5,6);
+// mult(2,4);
+//==================
+// function mult(args) { //mult(4,6) 
+// 	console.log(args.reduce(function(acc,currvalue){
+// 			return acc * currvalue;
+// 		}));
+// 	}
+
+// mult(5,6);
+// mult(2,4);
+
+//===============
+
+// const array1 = [1, 2, 3, 4];
+// const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+// // 1 + 2 + 3 + 4
+// console.log(array1.reduce(reducer));
+// // expected output: 10
+
+// // 5 + 1 + 2 + 3 + 4
+// console.log(array1.reduce(reducer, 5));
+// // expected output: 15
+
+// The reducer function takes four arguments:
+
+// Accumulator (acc)
+// Current Value (cur)
+// Current Index (idx)
+// Source Array (src)
+
+
+
+// ===============
+function xyz(x, y, ...z) {
+  console.log(x, ' ', y); // hey hello
+
+  console.log(z); // ["wassup", "goodmorning", "hi", "howdy"]
+  console.log(z[0]); // wassup
+  console.log(z.length); // 4
+}
+
+xyz("hey", "hello", "wassup", "goodmorning", "hi", "howdy")
