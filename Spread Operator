@@ -1,0 +1,76 @@
+function add(x, y) {
+  return x + y;
+}
+add(1, 2, 3, 4, 5) // returns 3
+
+===============================
+
+function add(...args) {
+  let result = 0;
+
+  for (let arg of args) result += arg;
+
+  return result
+}
+
+=================================
+
+add(1) // returns 1
+add(1,2) // returns 3
+add(1, 2, 3, 4, 5) // returns 15
+
+===================================
+function xyz(x, y, ...z) {
+  console.log(x, ' ', y); // hey hello
+
+  console.log(z); // ["wassup", "goodmorning", "hi", "howdy"]
+  console.log(z[0]); // wassup
+  console.log(z.length); // 4
+}
+
+xyz("hey", "hello", "wassup", "goodmorning", "hi", "howdy")
+======================================
+function someFunction() {
+  return arguments;
+}
+
+someFunction("joykare", 100, false);
+
+====================================
+function add(a, b, c) {
+  return a + b + c ;
+}
+const args = [1, 2, 3];
+
+add(...args);
+
+=========================
+
+const arr = [1, 2, 3];
+const arr2 = [...arr];
+
+=========================
+
+
+const arr = ["Joy", "Wangari", "Warugu"];
+const newArr = ["joykare", ...arr];
+
+===================================
+
+
+Read Me
+let arr = [3, 5, 1];
+
+alert( Math.max(arr) ); // NaN
+
+And surely we can’t manually list items in the code Math.max(arr[0], arr[1], arr[2]), because we may be unsure how many there are. As our script executes, there could be a lot, or there could be none. And that would get ugly.
+
+Spread operator to the rescue! It looks similar to rest parameters, also using ..., but does quite the opposite.
+
+When ...arr is used in the function call, it “expands” an iterable object arr into the list of arguments.
+
+For Math.max:
+
+let arr = [3, 5, 1];
+
+alert( Math.max(...arr) ); // 5 (spread turns array into a list of arguments)
