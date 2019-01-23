@@ -1,0 +1,77 @@
+/* alert("hell jat".match(/[hj]a/gi)) */
+
+alert("Exception oxBDF".match(/x[0-5A-F][0-5A-Fa-f]/g));
+
+\d – is the same as [0-9],
+\w – is the same as [a-zA-Z0-9_],
+\s – is the same as [\t\n\v\f\r ] plus few other unicode space character
+
+
+
+We can use character classes inside […] as well.
+
+For instance, we want to match all wordly characters or a dash, for words like “twenty-third”. We can’t do it with \w+, 
+because \w class does not include a dash. But we can use [\w-].
+
+We also can use a combination of classes to cover every possible character, like [\s\S]. That matches spaces or 
+non-spaces – any character. That’s wider than a dot ".", because the dot matches any character except a newline.
+
+===============
+excluding range
+===============
+
+Besides normal ranges, there are “excluding” ranges that look like [^…].
+
+They are denoted by a caret character ^ at the start and match any character except the given ones.
+
+For instance:
+
+[^aeyo] – any character except 'a', 'e', 'y' or 'o'.
+[^0-9] – any character except a digit, the same as \D.
+[^\s] – any non-space character, same as \S.
+The example below looks for any characters except letters, digits and spaces:
+
+ alert( "alice15@gmail.com".match(/[^\d\sA-Z]/gi) ); // @ and .
+
+
+/* alert("hell jat".match(/[hj]a/gi)) */
+
+alert("Exception oxBDF".match(/x[0-5A-F][0-5A-Fa-f]/g));
+
+alert('aliceTheWonderLand@gmail.com'.match(/[0-9A-Fa-f]/g));
+
+alert('aliceTheWonderLand@gmail.com'.match(/^[0-9A-Fa-f]/gi));
+
+alert( "alice15@gmail.com".match(/[^\d\sA-Z]/gi) ); // @ and .
+
+
+
+
+String start ^ and finish $
+The caret '^' and dollar '$' characters have special meaning in a regexp. They are called “anchors”.
+
+The caret ^ matches at the beginning of the text, and the dollar $ – in the end.
+
+let str1 = "Mary had a little lamb, it's fleece was white as snow";
+let str2 = 'Everywhere Mary went, the lamp was sure to go';
+
+alert( /^Mary/.test(str1) ); // true
+alert( /^Mary/.test(str2) ); // false
+
+
+
+
+
+let str = "#abcdef";
+alert( /^#[0-9a-f]{6}$/i.test(str) ); // true
+
+
+
+
+Which string matches the pattern ^$?
+The string is empty "". The engine first matches the ^ (input start), yes it’s there, and then immediately the end $
+
+
+let reg = /your regexp/;
+
+alert( reg.test('01:32:54:67:89:AB') ); // true
