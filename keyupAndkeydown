@@ -1,0 +1,30 @@
+<html>
+
+<body>
+  <input type="text" id="p" class="para" onInput="this.value=this.value.toUpperCase()" />
+  <input type="button" id="btn" value="submit">
+  <script>
+    window.addEventListener("keydown", event => {
+      if (event.key == "v") {
+        document.body.style.background = "violet";
+      }
+    });
+     window.addEventListener("keyup", event => {
+      if (event.key == "v") {
+        document.body.style.background = "";
+      }
+    });
+    window.addEventListener("keydown", event => {
+      if (event.key == "g") {
+        document.body.style.background = "green";
+      }
+    });
+     window.addEventListener("keyup", event => {
+      if (event.key == "g") {
+        document.body.style.background = "";
+      }
+    });
+  </script>
+</body>
+
+</html>
