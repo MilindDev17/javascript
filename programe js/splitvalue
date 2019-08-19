@@ -1,0 +1,10 @@
+
+
+var x = "132453566778";
+var numbersplt = x.split('');
+var number = [];
+for(var i=0;i<numbersplt.length;i++){
+    var createArray = numbersplt[i];
+    number.push(createArray)
+}
+console.log(number)
